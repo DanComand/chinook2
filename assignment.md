@@ -23,11 +23,15 @@ Check out [W3Schools' SQL Reference](http://www.w3schools.com/sql/sql_syntax.asp
 ```SQL
 /* Add your answer below */
 
+214
+
 ```
 
 2. Find the least expensive Track that has the Genre "Electronica/Dance".
 ```SQL
 /* Add your answer below */
+
+ Instinto Colectivo
 
 ```
 
@@ -35,13 +39,31 @@ Check out [W3Schools' SQL Reference](http://www.w3schools.com/sql/sql_syntax.asp
 ```SQL
 /* Add your answer below */
 
-```
+ Aerosmith
+ Alice In Chains
+ Antônio Carlos Jobim
+ Apocalyptica
+ Azymuth
+ Aquaman
+ AC/DC
+ Alanis Morissette
+ Audioslave
+ Avril Lavigne
+ Aisha Duo
+ Aaron Goldberg
+ Academy of St. Martin in the Fields Chamber Ensemble & Sir Neville Marriner
+ Academy of St. Martin in the Fields, John Birch, Sir Neville Marriner & Sylvia McNair
+ Aaron Copland & London Symphony Orchestra
+ Antal Doráti & London Symphony Orchestra
+ Amy Winehouse
+ Adrian Leaper & Doreen de Feis
+
 
 4. Find all the Tracks that belong to the first Playlist.
 ```SQL
 /* Add your answer below */
 
-```
+3290 Tracks in the first playlist.
 
 ## Active Record Query Interface
 In order to complete these exercises, you'll need to launch your Rails console with
@@ -139,11 +161,15 @@ Of course, these can be done as one or more steps.
 ```ruby
 # Enter your answer below
 
+35
+
 ```
 
 2. Find the most expensive Track that has the MediaType "MPEG audio file".
 ```ruby
 # Enter your answer below
+
+Track.where(media_type_id: 1).order(unit_price: :desc)
 
 ```
 
@@ -151,12 +177,22 @@ Of course, these can be done as one or more steps.
 ```ruby
 # Enter your answer below
 
+Les Arts Florissants & William Christie, Baby Consuelo
+
 ```
 
 
 4. Find all the Tracks that belong to the 2 most recent Playlist.
 ```ruby
 # Enter your answer below
+
+playlists = Playlist.order(:updated_at).limit(2)
+tracks = []
+playlists.each do |playlist|
+  tracks << playlist.tracks.all
+end
+tracks
+
 
 ```
 
